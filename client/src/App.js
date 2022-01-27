@@ -1,38 +1,22 @@
 import React from "react";
-import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
+
+import LandingPage from "./components/views/LandingPage/LandingPage";
+import LoginPage from "./components/views/LoginPage/LoginPage";
+import RegisterPage from "./components/views/RegisterPage/RegisterPage";
 
 function App() {
   return (
     <Router>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-        </ul>
-
         <hr />
-
-        {/*
-      A <Switch> looks through all its children <Route>
-      elements and renders the first one whose path
-      matches the current URL. Use a <Switch> any time
-      you have multiple routes, but you want only one
-      of them to render at a time
-    */}
         <Routes>
-          <Route exact={true} path={"/"} element={<Home />} />
+          <Route exact={true} path={"/"} element={<LandingPage />} />
 
-          <Route exact={true} path="/about" element={<About />} />
+          <Route exact={true} path="/login" element={<LoginPage />} />
 
-          <Route exact={true} path="/dashboard" element={<Dashboard />} />
+          <Route exact={true} path="/register" element={<RegisterPage />} />
         </Routes>
       </div>
     </Router>
@@ -40,27 +24,3 @@ function App() {
 }
 
 export default App;
-
-function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-    </div>
-  );
-}
-
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
-}
-
-function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
-    </div>
-  );
-}

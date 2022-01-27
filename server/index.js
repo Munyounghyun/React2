@@ -34,6 +34,10 @@ app.get("/", (req, res) => {
   res.send("새해복 많이받으세요");
 });
 
+app.get("/api/hello", (req, res) => {
+  res.send("Hellow World!~~");
+});
+
 //회원가입
 app.post("/api/user/register", (req, res) => {
   //회원 가입 할때 필요한 정보들을 client에서 가져오면
