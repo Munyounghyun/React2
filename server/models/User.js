@@ -45,7 +45,7 @@ userSchema.pre("save", function (next) {
     });
   } else {
     //비밀번호를 바꾸는게 아니라 다른거를 바꿀때 next()안해주면 멈춰버림
-    next(); //
+    next();
   }
 });
 

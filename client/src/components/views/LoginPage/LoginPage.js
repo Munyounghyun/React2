@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../../_actions/user_action";
 
-const LoginPage = () => {
+const LoginPage = (props) => {
   var navigate = useNavigate();
   const dispatch = useDispatch();
   const [Email, setEmail] = useState("");
@@ -66,7 +66,7 @@ const LoginPage = () => {
           onChange={onPasswordHandler}
         />
         <br />
-        <button>Login</button>
+        <button type="submit">Login</button>
       </form>
     </div>
   );
