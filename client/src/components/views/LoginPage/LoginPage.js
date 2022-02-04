@@ -33,6 +33,9 @@ const LoginPage = (props) => {
       }
     });
   };
+  const onRegister = (event) => {
+    navigate("/register");
+  };
 
   return (
     <div
@@ -49,7 +52,6 @@ const LoginPage = (props) => {
           display: "flex",
           flexDirection: "column",
         }}
-        onSubmit={onSubmitHandler}
       >
         <label>Email</label>
         <input
@@ -66,7 +68,14 @@ const LoginPage = (props) => {
           onChange={onPasswordHandler}
         />
         <br />
-        <button type="submit">Login</button>
+        <button
+          style={{ marginBottom: "10px" }}
+          type="submit"
+          onClick={onSubmitHandler}
+        >
+          Login
+        </button>
+        <button onClick={onRegister}>회원가입</button>
       </form>
     </div>
   );
